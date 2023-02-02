@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="icon" type="image/x-icon" href="./assets/photo-abe7e82d.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivan Chaplinskyi</title>
+    <script type="module" crossorigin src="./assets/index-b32b8903.js"></script>
+    <link rel="stylesheet" href="./assets/index-61cf4d03.css">
+  </head>
+  <body x-data class="lock">
+    <div x-bind="Preloader" class="preloader">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div x-cloak id="app">
+      <header x-data="Header" class="header">
+        <div class="header__container">
+          <div class="header__logo">
+            <h1 x-cloak class="header__logo-text">Ivan Chaplinskyi</h1>
+          </div>
+          <nav class="header__nav" x-bind="toggleNav">
+            <ul class="header__nav-container">
+              <template x-for="nav in navigation">
+                <li @click="open = false"><a :href="nav.link" x-text="nav.title"></a></li>
+              </template>
+            </ul>
+          </nav>
+          <div class="header__contacts">
+            <ul class="header__contacts-container">
+              <template x-for="contact in contacts">
+                <li>
+                  <a :href="contact.link" target="_blank" ><img :src="contact.img"></a>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <button @click="toggleMenu" class="header__menu">
+            <span></span>
+          </button>
+        </div>
+      </header>
+      <main x-data="Main" class="main">
+        <div class="main__container">
+          <section class="hero-banner">
+            <div class="hero-banner__container">
+              <div class="hero-banner__description"></div>
+              <div class="hero-banner__photo">
+                <img x-cloak src="./assets/photo-abe7e82d.jpg" loading="lazy" alt="">
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__container"></div>
+      </footer>
+    </div>
+    <div class="popup">
+      <div class="popup__container"></div>
+    </div>
+  </body>
+</html>
